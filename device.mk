@@ -49,7 +49,8 @@ PRODUCT_COPY_FILES += \
 
 # Script for baseband name resolution
 PRODUCT_COPY_FILES += \
-	device/lge/geeb/fetch-swv:system/bin/fetch-swv
+	device/lge/geeb/fetch-swv:system/bin/fetch-swv \
+	device/lge/geeb/efsbackup.sh:system/bin/efsbackup.sh
 
 PRODUCT_COPY_FILES += \
 	device/lge/geeb/snd_soc_msm_2x_Fusion3:system/etc/snd_soc_msm/snd_soc_msm_2x_Fusion3 \
