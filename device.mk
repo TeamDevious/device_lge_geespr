@@ -112,10 +112,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
 	device/lge/geeb/prebuilt/libpn544_fw.so:system/vendor/firmware/libpn544_fw.so
 
-# vold configuration
-PRODUCT_COPY_FILES += \
-        device/lge/geeb/vold.fstab:system/etc/vold.fstab
-
 # NFC packages
 PRODUCT_PACKAGES += \
     libnfc \
