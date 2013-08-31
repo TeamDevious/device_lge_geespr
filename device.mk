@@ -14,12 +14,18 @@
 # limitations under the License.
 #
 
-# This file includes all definitions that apply to ALL geeb devices, and
-# are also specific to geeb devices
+# This file includes all definitions that apply to ALL geespr devices, and
+# are also specific to geespr devices
 #
 # Everything in this directory will become public
 
-DEVICE_PACKAGE_OVERLAYS := device/lge/geeb/overlay
+DEVICE_PACKAGE_OVERLAYS := device/lge/geespr/overlay
+
+## common overlays
+DEVICE_PACKAGE_OVERLAYS += device/lge/geespr/overlay-common
+
+## cdma overlays
+DEVICE_PACKAGE_OVERLAYS += device/lge/geespr/overlay-cdma
 
 # This device is xhdpi.  However the platform doesn't
 # currently contain all of the bitmaps at xhdpi density so
@@ -27,9 +33,6 @@ DEVICE_PACKAGE_OVERLAYS := device/lge/geeb/overlay
 # if the xhdpi doesn't exist.
 PRODUCT_AAPT_CONFIG := normal hdpi xhdpi
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
-
-PRODUCT_PACKAGES := \
-	lights.geeb
 
 PRODUCT_PACKAGES += \
     charger_res_images \
@@ -43,47 +46,47 @@ PRODUCT_PACKAGES += \
         librs_jni
 
 PRODUCT_COPY_FILES += \
-	device/lge/geeb/WCNSS_cfg.dat:system/vendor/firmware/wlan/prima/WCNSS_cfg.dat \
-	device/lge/geeb/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini \
-	device/lge/geeb/WCNSS_qcom_wlan_nv.bin:system/etc/wifi/WCNSS_qcom_wlan_nv.bin
+	device/lge/geespr/WCNSS_cfg.dat:system/vendor/firmware/wlan/prima/WCNSS_cfg.dat \
+	device/lge/geespr/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini \
+	device/lge/geespr/WCNSS_qcom_wlan_nv.bin:system/etc/wifi/WCNSS_qcom_wlan_nv.bin
 
 # Script for baseband name resolution
 PRODUCT_COPY_FILES += \
-	device/lge/geeb/fetch-swv:system/bin/fetch-swv \
-	device/lge/geeb/efsbackup.sh:system/bin/efsbackup.sh
+	device/lge/geespr/fetch-swv:system/bin/fetch-swv \
+	device/lge/geespr/efsbackup.sh:system/bin/efsbackup.sh
 
 PRODUCT_COPY_FILES += \
-	device/lge/geeb/snd_soc_msm_2x_Fusion3:system/etc/snd_soc_msm/snd_soc_msm_2x_Fusion3 \
-	device/lge/geeb/audio_policy.conf:system/etc/audio_policy.conf
+	device/lge/geespr/snd_soc_msm_2x_Fusion3:system/etc/snd_soc_msm/snd_soc_msm_2x_Fusion3 \
+	device/lge/geespr/audio_policy.conf:system/etc/audio_policy.conf
 
 PRODUCT_COPY_FILES += \
-	device/lge/geeb/mixer_paths.xml:system/etc/mixer_paths.xml
+	device/lge/geespr/mixer_paths.xml:system/etc/mixer_paths.xml
 
 PRODUCT_COPY_FILES += \
-	device/lge/geeb/thermald-geeb.conf:system/etc/thermald.conf
+	device/lge/geespr/thermald-geespr.conf:system/etc/thermald.conf
 
 PRODUCT_COPY_FILES += \
-	device/lge/geeb/init.geeb.rc:root/init.geeb.rc \
-	device/lge/geeb/init.geeb.usb.rc:root/init.geeb.usb.rc \
-	device/lge/geeb/fstab.geeb:root/fstab.geeb \
-	device/lge/geeb/ueventd.geeb.rc:root/ueventd.geeb.rc \
-	device/lge/geeb/media_profiles.xml:system/etc/media_profiles.xml \
-	device/lge/geeb/media_codecs.xml:system/etc/media_codecs.xml
+	device/lge/geespr/init.geespr.rc:root/init.geespr.rc \
+	device/lge/geespr/init.geespr.usb.rc:root/init.geespr.usb.rc \
+	device/lge/geespr/fstab.geespr:root/fstab.geespr \
+	device/lge/geespr/ueventd.geespr.rc:root/ueventd.geespr.rc \
+	device/lge/geespr/media_profiles.xml:system/etc/media_profiles.xml \
+	device/lge/geespr/media_codecs.xml:system/etc/media_codecs.xml
 
 # Prebuilt kl and kcm keymaps
 PRODUCT_COPY_FILES += \
-	device/lge/geeb/apq8064-tabla-snd-card_Button_Jack.kl:system/usr/keylayout/apq8064-tabla-snd-card_Button_Jack.kl \
-	device/lge/geeb/hs_detect.kl:system/usr/keylayout/hs_detect.kl \
-	device/lge/geeb/pmic8xxx_pwrkey.kl:system/usr/keylayout/pmic8xxx_pwrkey.kl \
-	device/lge/geeb/keypad_8064.kl:system/usr/keylayout/keypad_8064.kl \
-	device/lge/geeb/apq8064-tabla-snd-card_Button_Jack.kcm:system/usr/keychars/apq8064-tabla-snd-card_Button_Jack.kcm \
-	device/lge/geeb/hs_detect.kcm:system/usr/keychars/hs_detect.kcm \
-	device/lge/geeb/keypad_8064.kcm:system/usr/keychars/keypad_8064.kcm \
-	device/lge/geeb/pmic8xxx_pwrkey.kcm:system/usr/keychars/pmic8xxx_pwrkey.kcm
+	device/lge/geespr/apq8064-tabla-snd-card_Button_Jack.kl:system/usr/keylayout/apq8064-tabla-snd-card_Button_Jack.kl \
+	device/lge/geespr/hs_detect.kl:system/usr/keylayout/hs_detect.kl \
+	device/lge/geespr/pmic8xxx_pwrkey.kl:system/usr/keylayout/pmic8xxx_pwrkey.kl \
+	device/lge/geespr/keypad_8064.kl:system/usr/keylayout/keypad_8064.kl \
+	device/lge/geespr/apq8064-tabla-snd-card_Button_Jack.kcm:system/usr/keychars/apq8064-tabla-snd-card_Button_Jack.kcm \
+	device/lge/geespr/hs_detect.kcm:system/usr/keychars/hs_detect.kcm \
+	device/lge/geespr/keypad_8064.kcm:system/usr/keychars/keypad_8064.kcm \
+	device/lge/geespr/pmic8xxx_pwrkey.kcm:system/usr/keychars/pmic8xxx_pwrkey.kcm
 
 # Prebuilt input device calibration files
 PRODUCT_COPY_FILES += \
-	device/lge/geeb/touch_dev.idc:system/usr/idc/touch_dev.idc
+	device/lge/geespr/touch_dev.idc:system/usr/idc/touch_dev.idc
 
 # These are the hardware-specific features
 PRODUCT_COPY_FILES += \
@@ -101,16 +104,17 @@ PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
 	frameworks/native/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml \
 	frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
+	frameworks/native/data/etc/android.hardware.telephony.cdma.xml:system/etc/permissions/android.hardware.telephony.cdma.xml \
 	frameworks/native/data/etc/android.hardware.audio.low_latency.xml:system/etc/permissions/android.hardware.audio.low_latency.xml \
 	frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml
 
 # GPS configuration
 PRODUCT_COPY_FILES += \
-	device/lge/geeb/gps.conf:system/etc/gps.conf
+	device/lge/geespr/gps.conf:system/etc/gps.conf
 
-# NFC firmware
 PRODUCT_COPY_FILES += \
-	device/lge/geeb/prebuilt/libpn544_fw.so:system/vendor/firmware/libpn544_fw.so
+	device/lge/geespr/prebuilt/libpn544_fw.so:system/vendor/firmware/libpn544_fw.so \
+	device/lge/geespr/prebuilt/lights.msm8960.so:system/lib/hw/lights.msm8960.so
 
 # NFC packages
 PRODUCT_PACKAGES += \
@@ -122,9 +126,9 @@ PRODUCT_PACKAGES += \
 
 # NFCEE access control
 #ifeq ($(TARGET_BUILD_VARIANT),user)
-    NFCEE_ACCESS_PATH := device/lge/geeb/nfc/nfcee_access.xml
+    NFCEE_ACCESS_PATH := device/lge/geespr/nfc/nfcee_access.xml
 #else
-#    NFCEE_ACCESS_PATH := device/lge/geeb/nfc/nfcee_access_debug.xml
+#    NFCEE_ACCESS_PATH := device/lge/geespr/nfc/nfcee_access_debug.xml
 #endif
 
 # NFC access control + feature files + configuration
@@ -200,7 +204,7 @@ PRODUCT_PACKAGES += \
 # Voice processing
 PRODUCT_PACKAGES += libqcomvoiceprocessing
 PRODUCT_COPY_FILES += \
-    device/lge/geeb/audio_effects.conf:system/vendor/etc/audio_effects.conf
+    device/lge/geespr/audio_effects.conf:system/vendor/etc/audio_effects.conf
 
 PRODUCT_PACKAGES += \
 	hci_qcomm_init
@@ -209,13 +213,13 @@ PRODUCT_PACKAGES += \
 	power.msm8960
 
 PRODUCT_COPY_FILES += \
-	device/lge/geeb/init.geeb.bt.sh:system/etc/init.geeb.bt.sh
+	device/lge/geespr/init.geespr.bt.sh:system/etc/init.geespr.bt.sh
 
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.qualcomm.bt.hci_transport=smd
 
 PRODUCT_PACKAGES += \
-	camera.geeb \
+	camera.geespr \
 	camera.msm8960 \
 	libmmcamera_interface2 \
 	libmmcamera_interface
@@ -251,11 +255,21 @@ PRODUCT_PACKAGES += \
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 	rild.libpath=/system/lib/libril-qc-qmi-1.so
 
+# Telephony Properties
 PRODUCT_PROPERTY_OVERRIDES += \
-        telephony.lteOnCdmaDevice=0 \
-        telephony.lteOnGsmDevice=1 \
-        ro.telephony.default_network=9 \
-        ro.ril.def.preferred.network=9
+        ro.telephony.ril_class=LGEQualcommCDMARIL \
+        ro.cdma.home.operator.numeric=310120 \
+        ro.cdma.home.operator.alpha=Sprint \
+        telephony.lteOnCdmaDevice=1 \
+        telephony.lte.cdma.device=1 \
+        ro.telephony.default_network=8 \
+        ro.ril.def.preferred.network=8 \
+        ril.subscription.types=NV,RUIM \
+        ro.cdma.subscribe_on_ruim_ready=true \
+        persist.radio.no_wait_for_card=1 \
+        keyguard.no_require_sim=true \
+        telephony.sms.pseudo_multipart=1 \
+        DEVICE_PROVISIONED=1
 
 PRODUCT_PROPERTY_OVERRIDES += \
 	drm.service.enabled=true
