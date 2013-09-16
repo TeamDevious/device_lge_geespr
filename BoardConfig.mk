@@ -47,6 +47,9 @@ BOARD_RIL_CLASS := "../../../device/lge/geespr/LGEQualcommCDMARIL"
 
 TARGET_OTA_ASSERT_DEVICE := geebus,geebusc,geehrc,geehrc4g,gee_sp,geehrc_sp,geehrc4g_spr_us,ls970,jeebus,jeebusc
 
+# Use JWR66Y kernel compatibility fix
+TARGET_USE_JWR66Y := true
+
 BOARD_USES_ALSA_AUDIO:= true
 BOARD_USES_LEGACY_ALSA_AUDIO:= false
 BOARD_USES_FLUENCE_INCALL := true
