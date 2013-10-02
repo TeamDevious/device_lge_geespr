@@ -42,6 +42,9 @@ BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01600000
 TARGET_KERNEL_CONFIG := geespr_defconfig
 TARGET_KERNEL_SOURCE := kernel/lge/geeb
 
+# Use JWR66Y kernel compatibility fix
+TARGET_USE_JWR66Y := true
+
 #Add Custom RIL class automatically
 BOARD_RIL_CLASS := "../../../device/lge/geespr/LGEQualcommCDMARIL"
 
@@ -83,7 +86,7 @@ USE_OPENGL_RENDERER := true
 TARGET_USES_ION := true
 TARGET_USES_OVERLAY := true
 TARGET_USES_SF_BYPASS := true
-TARGET_USES_C2D_COMPOSITON := true
+TARGET_USES_C2D_COMPOSITION := true
 
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 TARGET_RECOVERY_UI_LIB := librecovery_ui_geespr
