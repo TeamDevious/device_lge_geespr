@@ -42,6 +42,9 @@ BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01600000
 TARGET_KERNEL_CONFIG := geespr_defconfig
 TARGET_KERNEL_SOURCE := kernel/lge/geeb
 
+# Use JWR66Y kernel compatibility fix
+TARGET_USE_JWR66Y := true
+
 #Add Custom RIL class automatically
 BOARD_RIL_CLASS := "../../../device/lge/geespr/LGEQualcommCDMARIL"
 
